@@ -15,11 +15,7 @@ class CreateCitiesTable extends Migration
     {
         Schema::create('cities', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('cities');
-            $table->integer('id_municipality')->nullable();
-            $table->foreign('id_municipality')->references('id')->on('municipality');
-            $table->integer('id_village')->nullable();
-            $table->foreign('id_village')->references('id')->on('village');
+            $table->string('title');
         });
     }
 
