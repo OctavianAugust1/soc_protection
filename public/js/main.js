@@ -41,39 +41,41 @@ const populations = () => {
         return data.json()
     })
 }
-populations().then(data => {
-    const population = data.populations
-    let titles = []
-    let count = []
-    for (let key in population) {
-        titles.push(population[key]['title'])
-    }
-    for (let key in population) {
-        count.push(population[key]['quantity'])
-    }
-    console.log(titles)
-    var popCanvas = document.getElementById("popChart");
-    var barChart = new Chart(popCanvas, {
-        type: 'bar',
-        data: {
-            labels: titles,
-            datasets: [{
-                label: 'Уровень бедности',
-                data: count,
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.6)',
-                    'rgba(54, 162, 235, 0.6)',
-                    'rgba(255, 206, 86, 0.6)',
-                    'rgba(75, 192, 192, 0.6)',
-                    'rgba(153, 102, 255, 0.6)',
-                    'rgba(255, 159, 64, 0.6)',
-                    'rgba(255, 99, 132, 0.6)',
-                    'rgba(54, 162, 235, 0.6)',
-                    'rgba(255, 206, 86, 0.6)',
-                    'rgba(75, 192, 192, 0.6)',
-                    'rgba(153, 102, 255, 0.6)'
-                ]
-            }]
+
+if (document.querySelector('#popChart')) {
+    populations().then(data => {
+        const population = data.populations
+        let titles = []
+        let count = []
+        for (let key in population) {
+            titles.push(population[key]['title'])
         }
-    });
-})
+        for (let key in population) {
+            count.push(population[key]['quantity'])
+        }
+        var popCanvas = document.getElementById("popChart");
+        var barChart = new Chart(popCanvas, {
+            type: 'bar',
+            data: {
+                labels: titles,
+                datasets: [{
+                    label: 'Уровень бедности',
+                    data: count,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.6)',
+                        'rgba(54, 162, 235, 0.6)',
+                        'rgba(255, 206, 86, 0.6)',
+                        'rgba(75, 192, 192, 0.6)',
+                        'rgba(153, 102, 255, 0.6)',
+                        'rgba(255, 159, 64, 0.6)',
+                        'rgba(255, 99, 132, 0.6)',
+                        'rgba(54, 162, 235, 0.6)',
+                        'rgba(255, 206, 86, 0.6)',
+                        'rgba(75, 192, 192, 0.6)',
+                        'rgba(153, 102, 255, 0.6)'
+                    ]
+                }]
+            }
+        });
+    })
+}

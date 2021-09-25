@@ -6,7 +6,7 @@
             <h1 class="shadow-lg pl-5 pr-5 pt-2 pb-2">Число бедности</h1>
         </div>
         <div class="chart-block">
-            <canvas id="popChart" width="600" height="200">
+            <canvas id="popChart" width="600" height="200"></canvas>
         </div>
     </div>
 @endsection
