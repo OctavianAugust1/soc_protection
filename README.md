@@ -1,33 +1,4 @@
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@liemuar 
-Sinclear
-/
-default_readme
-Public
-1
-029
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-default_readme/README.md
-@Sinclear
-Sinclear Update README.md
-Latest commit da7db14 on 17 Apr
- History
- 1 contributor
-97 lines (78 sloc)  3.38 KB
-  
+
 ВАЖНО!!!
 Не указывать название команды, не указывать наименование хакатона и название проекта.
 
