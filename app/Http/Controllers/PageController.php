@@ -14,6 +14,7 @@ class PageController extends Controller
         return view('pages.service');
     }
     public function total_amount_of_poverty() {
-        return view('pages.total_amount_of_poverty');
+        $populations = City::leftJoin('populations', 'cities.id', '=', 'populations.id_cities')->get();
+        return view('pages.total_amount_of_poverty', compact('populations'));
     }
 }
