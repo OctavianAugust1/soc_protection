@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Invalids_category extends Model
 {
-    //
+    protected $fillable = [
+        'title'
+    ];
 }
