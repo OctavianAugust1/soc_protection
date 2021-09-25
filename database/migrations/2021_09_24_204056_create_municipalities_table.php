@@ -88,7 +88,7 @@ class CreateMunicipalitiesTable extends Migration
             38162.4,
         );
         $cities = DB::table('cities')->count();
-        for ($i = 0; $i < count($salaries); $i++) {
+        for ($i = 0; $i < count($municipalities); $i++) {
             Municipality::insert([
                 'title' => $municipalities[$i],
                 'salaries' => $salaries[$i],
