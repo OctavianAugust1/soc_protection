@@ -37,10 +37,8 @@
       <div class="side-inner">
 
         <div class="profile">
-          <img src="images/person_profile.jpg" alt="Image" class="img-fluid">
+          <img src="#" alt="logo" class="img-fluid">
         </div>
-
-
 
         <div class="nav-menu">
             <ul class="list-unstyled components mb-5">
@@ -51,35 +49,10 @@
                         <li><a href="{{ route('invalids_and_population') }}"><span class="fa fa-chevron-right mr-2"></span>Количество инвалидов относительно бедных</a></li>
                         <li><a href="{{ route('total_amount_of_poverty') }}"><span class="fa fa-chevron-right mr-2"></span>Число бедности</a></li>
                         <li><a href="{{ route('unemployed_and_population') }}"><span class="fa fa-chevron-right mr-2"></span>Число безработных относительно всего населения</a></li>
-                        <li><a href="{{ route('index') }}"><span class="fa fa-chevron-right mr-2"></span>Количество бедных по налию детей</a></li>
+                        <li><a href="{{ route('service')  }}"><span class="fa fa-chevron-right mr-2"></span>Услуги</a></li>
                     </ul>
                 </li>
-            <li>
-                <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><span class="icon-home mr-3"></span>Доход</a>
-                <ul class="collapse list-unstyled" id="pageSubmenu2">
-                    <li><a href="#"><span class="fa fa-chevron-right mr-2"></span> Количество людей по доходу</a></li>
-                    <li><a href="#"><span class="fa fa-chevron-right mr-2"></span> Количество людей по доходу и полу</a></li>
-                    <li><a href="#"><span class="fa fa-chevron-right mr-2"></span> Количество людей по доходу, и количество детей</a></li>
-                </ul>
-              </li>
-              <li>
-                <a href="#pageSubmenu3" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><span class="icon-home mr-3"></span>Динамика бедности</a>
-                <ul class="collapse list-unstyled" id="pageSubmenu3">
-                    <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>   <canvas id="grafica"></canvas></a></li>
-                </ul>
-              </li>
-            <li>
-                <a href="#pageSubmenu4" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><span class="icon-home mr-3"></span>Услуги</a>
-                <ul class="collapse list-unstyled" id="pageSubmenu4">
-                    <li><a href="{{ route('service')  }}"><span class="fa fa-chevron-right mr-2"></span>Услуги</a></li>
-                    <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Социальные выплаты и пособия</a></li>
-                    <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Социальная защита ветеранов</a></li>
-                    <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Социальная защита инвалидов</a></li>
-                    <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Опека и помешательство</a></li>
-                    <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Трудоустроиство</a></li>
-                </ul>
-              </li>
-          </ul>
+            </ul>
         </div>
       </div>
     </aside>

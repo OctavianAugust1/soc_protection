@@ -1,19 +1,66 @@
 ymaps.ready(['Heatmap']).then(function init() {
-    var obj = json;
+    const populations = () => {
+        return fetch(`${window.location.origin}/api/get_population`).then(data => {
+            return data.json()
+        })
+    }
+    const udmurt_cities = [
+        {'Ижевск': [56.856317, 53.206894]},
+        {'Воткинск': [57.051811, 53.987401]},
+        {'Воткинский район': [56.904585, 53.924950]},
+        {'Глазов': [58.140801, 52.674253]},
+        {'Глазовский район': [58.192615, 52.715584]},
+        {'Можга': [56.442807, 52.213839]},
+        {'Можгинский район': [56.486022, 52.298434]},
+        {'Сарапул': [56.461626, 53.803678]},
+        {'Сарапульский район': [56.394625, 53.529063]},
+        {'Алнашский': [56.155107, 52.529813]},
+        {'Балезинский': [58.074717, 53.207448]},
+        {'Вавожский': [56.763549, 51.802132]},
+        {'Граховский': [56.062791, 51.964647]},
+        {'Дебесский': [57.630785, 53.803318]},
+        {'Завьяловский': [56.736987, 53.339590]},
+        {'Игринский': [57.510796, 53.066844]},
+        {'Камбарский': [56.370279, 54.158126]},
+        {'Каракулинский': [56.077513, 53.691990]},
+        {'Кезский': [58.014383, 53.708923]},
+        {'Кизнерский': [56.363279, 51.591154]},
+        {'Киясовский': [56.285868, 53.184217]},
+        {'Красногорский': [57.659705, 52.372311]},
+        {'Малопургинский': [56.589874, 53.000368]},
+        {'Селтинский': [57.350806, 51.978615]},
+        {'Сюмсинский': [57.166691, 51.480787]},
+        {'Увинский': [56.989346, 52.350841]},
+        {'Шарканский': [57.336275, 53.840086]},
+        {'Юкаменский': [57.913950, 52.182084]},
+        {'Якшур-бодьинский': [57.172703, 53.075512]},
+        {'Ярский': [58.254417, 52.074582]},
+    ]
+
+    populations().then(data => {
+        const populations = data.populations
+        for (let udmurtCitiesKey in udmurt_cities) {
+            udmurt_cities[udmurtCitiesKey].population = populations[udmurtCitiesKey]['quantity']*0.119
+        }
+    })
+
+    var obj = udmurt_cities;
 
     var myMap = new ymaps.Map('map', {
-        center: [55.733835, 37.588227],
-        zoom: 11,
+        center: [56.852676, 53.206900],
+        zoom: 7,
         controls: []
     });
 
     var data = [];
-    for (var i = 0; i < obj.length; i++) {
-        data.push([obj[i].Cells.geoData.coordinates[1], obj[i].Cells.geoData.coordinates[0]])
+    for (let udmurtCitiesKey in udmurt_cities) {
+        for (let cityKey in udmurt_cities[udmurtCitiesKey]) {
+            data.push([udmurt_cities[udmurtCitiesKey][cityKey][0], udmurt_cities[udmurtCitiesKey][cityKey][1]])
+        }
     }
     var heatmap = new ymaps.Heatmap(data, {
         // Радиус влияния.
-        radius: 15,
+        radius: 30,
         // Нужно ли уменьшать пиксельный размер точек при уменьшении зума. False - не нужно.
         dissipating: false,
         // Прозрачность тепловой карты.
