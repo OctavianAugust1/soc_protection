@@ -18,12 +18,11 @@ class CreateMunicipalitiesTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->string('salaries');
-            $table->bigInteger('id_cities')->unsigned();
+            $table->unsignedBigInteger('id_cities');
             $table->foreign('id_cities')->references('id')->on('cities');
         });
 
         $municipalities = array(
-            'Удмуртской Республики',
             'Алнашский муниципальный район',
             'Балезинский муниципальный район',
             'Вавожский муниципальный район',

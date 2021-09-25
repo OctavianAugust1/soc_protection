@@ -16,7 +16,7 @@ class CreateUnemployedsTable extends Migration
     {
         Schema::create('unemployeds', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('id_cities')->unsigned();
+            $table->unsignedBigInteger('id_cities');
             $table->foreign('id_cities')->references('id')->on('cities');
             $table->integer('quantity');
         });

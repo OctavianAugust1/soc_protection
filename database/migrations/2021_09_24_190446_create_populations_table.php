@@ -16,7 +16,7 @@ class CreatePopulationsTable extends Migration
     {
         Schema::create('populations', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('id_cities')->unsigned();
+            $table->unsignedBigInteger('id_cities');
             $table->foreign('id_cities')->references('id')->on('cities');
             $table->integer('quantity');
         });

@@ -16,9 +16,9 @@ class CreateInvalidsTable extends Migration
     {
         Schema::create('invalids', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('id_cities')->unsigned();
+            $table->unsignedBigInteger('id_cities');
             $table->foreign('id_cities')->references('id')->on('cities');
-            $table->bigInteger('id_invalids_categories')->unsigned();
+            $table->unsignedBigInteger('id_invalids_categories');
             $table->foreign('id_invalids_categories')->references('id')->on('invalids_categories');
             $table->integer('quantity');
         });
