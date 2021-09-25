@@ -19,6 +19,46 @@ class CreateUnemployedsTable extends Migration
             $table->foreign('id_cities')->references('id')->on('cities');
             $table->integer('quantity');
         });
+
+        $cities = DB::table('cities')->pluck('id');
+        $quantity = array(
+            7657,
+            421,
+            168,
+            631,
+            154,
+            656,
+            409,
+            953,
+            299,
+            258,
+            325,
+            165,
+            100,
+            101,
+            679,
+            270,
+            290,
+            149,
+            222,
+            311,
+            120,
+            94,
+            365,
+            121,
+            148,
+            184,
+            256,
+            194,
+            117,
+            200,
+        );
+        for ($i = 0; $i < count($quantity); $i++) {
+            DB::table('unemployeds')->insert([
+                'id_cities' => $cities[$i],
+                'quantity' => $quantity[$i],
+            ]);
+        }
     }
 
     /**
