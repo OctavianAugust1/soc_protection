@@ -43,17 +43,23 @@ const populations = () => {
 }
 populations().then(data => {
     const population = data.populations
-    for (let key of population) {
-        console.log(key)
+    let titles = []
+    let count = []
+    for (let key in population) {
+        titles.push(population[key]['title'])
     }
+    for (let key in population) {
+        count.push(population[key]['quantity'])
+    }
+    console.log(titles)
     var popCanvas = document.getElementById("popChart");
     var barChart = new Chart(popCanvas, {
         type: 'bar',
         data: {
-            labels: [data.populations],
+            labels: titles,
             datasets: [{
                 label: 'Уровень бедности',
-                data: [1379302771, 1281935911, 326625791, 260580739, 207353391, 204924861, 190632261, 157826578, 142257519, 126451398],
+                data: count,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.6)',
                     'rgba(54, 162, 235, 0.6)',
