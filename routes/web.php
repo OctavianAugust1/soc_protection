@@ -15,3 +15,4 @@ Route::get('/', 'PageController@index')->name('index');
 Route::get('service', 'PageController@service')->name('service');
 Route::get('total_amount_of_poverty', 'PageController@total_amount_of_poverty')->name('total_amount_of_poverty');
 Route::get('invalids_and_population', 'PageController@invalids_and_population')->name('invalids_and_population');
+Route::get('unemployed_and_population', 'PageController@unemployed_and_population')->name('unemployed_and_population');

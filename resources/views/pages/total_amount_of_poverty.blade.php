@@ -1,5 +1,5 @@
 @extends('app')
-@section('title', 'Главная')
+@section('title', 'Число бедности')
 @section('content')
     <div class="container">
         <div class="d-flex align-items-center justify-content-center pt-5">

@@ -19,4 +19,7 @@ class PageController extends Controller
     public function invalids_and_population() {
         return view('pages.invalids_and_population');
     }
+    public function unemployed_and_population() {
+        return view('pages.unemployed_and_population');
+    }
 }

@@ -50,7 +50,7 @@
                     <ul class="collapse list-unstyled" id="pageSubmenu1">
                         <li><a href="{{ route('invalids_and_population') }}"><span class="fa fa-chevron-right mr-2"></span>Количество инвалидов относительно бедных</a></li>
                         <li><a href="{{ route('total_amount_of_poverty') }}"><span class="fa fa-chevron-right mr-2"></span>Число бедности</a></li>
-                        <li><a href="{{ route('index') }}"><span class="fa fa-chevron-right mr-2"></span>Количество бедных по возрасту</a></li>
+                        <li><a href="{{ route('unemployed_and_population') }}"><span class="fa fa-chevron-right mr-2"></span>Число безработных относительно всего населения</a></li>
                         <li><a href="{{ route('index') }}"><span class="fa fa-chevron-right mr-2"></span>Количество бедных по налию детей</a></li>
                     </ul>
                 </li>
