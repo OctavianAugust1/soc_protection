@@ -30,9 +30,6 @@ $(function() {
 			}
     }
 	});
-
-
-
 });
 
 
@@ -76,6 +73,91 @@ if (document.querySelector('#popChart')) {
                     ]
                 }]
             }
+        });
+    })
+}
+
+
+if (document.querySelector('#oilChart')) {
+    const invalids_populations = () => {
+        return fetch(`${window.location.origin}/api/get_invalids_and_population`).then(data => {
+            return data.json()
+        })
+    }
+
+    invalids_populations().then(data => {
+        const invalids_quantity = data.invalids_quantity
+        const population = data.population
+
+
+        var oilCanvas = document.getElementById("oilChart");
+
+        Chart.defaults.global.defaultFontFamily = "Lato";
+        Chart.defaults.global.defaultFontSize = 18;
+
+        var oilData = {
+            labels: ['Инвалиды', 'Всего населения'],
+            datasets: [
+                {
+                    data: [invalids_quantity, population],
+                    backgroundColor: [
+                        "#FF6384",
+                        "#63FF84",
+                        "#84FF63",
+                        "#8463FF",
+                        "#6384FF"
+                    ]
+                }
+            ]
+        };
+
+        var pieChart = new Chart(oilCanvas, {
+            type: 'pie',
+            data: oilData
+        });
+    })
+}
+
+
+
+if (document.querySelector('#pipChart')) {
+    const get_unemployed_and_population = () => {
+        return fetch(`${window.location.origin}/api/get_unemployed_and_population`).then(data => {
+            return data.json()
+        })
+    }
+
+    get_unemployed_and_population().then(data => {
+        const unemployed_quantity = data.unemployed_quantity
+        const population = data.population
+
+
+
+
+        var oilCanvas = document.getElementsByClassName("oilChart");
+
+        Chart.defaults.global.defaultFontFamily = "Lato";
+        Chart.defaults.global.defaultFontSize = 18;
+
+        var oilData = {
+            labels: ['Безработные', 'Всего населения'],
+            datasets: [
+                {
+                    data: [unemployed_quantity, population],
+                    backgroundColor: [
+                        "#FF6384",
+                        "#63FF84",
+                        "#84FF63",
+                        "#8463FF",
+                        "#6384FF"
+                    ]
+                }
+            ]
+        };
+
+        var pieChart = new Chart(oilCanvas, {
+            type: 'pie',
+            data: oilData
         });
     })
 }
