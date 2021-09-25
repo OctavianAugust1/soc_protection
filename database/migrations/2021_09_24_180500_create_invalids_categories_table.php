@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\Invalids_category;
 
 class CreateInvalidsCategoriesTable extends Migration
 {
@@ -25,7 +26,7 @@ class CreateInvalidsCategoriesTable extends Migration
             'Дети инвалиды',
         );
         for ($i = 0; $i < 4; $i++) {
-            DB::table('invalids_categories')->insert(['title' => $titles[$i]]);
+            Invalids_category::insert(['title' => $titles[$i]]);
         }
     }
 

@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\Invalid;
 
 class CreateInvalidsTable extends Migration
 {
@@ -168,22 +169,22 @@ class CreateInvalidsTable extends Migration
         );
 
         for ($i = 0; $i < count($invalids_1); $i++) {
-            DB::table('invalids')->insert([
+            Invalid::insert([
                 'id_cities' => rand(1, 30),
                 'id_invalids_categories' => 1,
                 'quantity' => $invalids_1[$i],
             ]);
-            DB::table('invalids')->insert([
+            Invalid::insert([
                 'id_cities' => rand(1, 30),
                 'id_invalids_categories' => 2,
                 'quantity' => $invalids_2[$i],
             ]);
-            DB::table('invalids')->insert([
+            Invalid::insert([
                 'id_cities' => rand(1, 30),
                 'id_invalids_categories' => 3,
                 'quantity' => $invalids_3[$i],
             ]);
-            DB::table('invalids')->insert([
+            Invalid::insert([
                 'id_cities' => rand(1, 30),
                 'id_invalids_categories' => 4,
                 'quantity' => $invalids_children[$i],

@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\Population;
 
 class CreatePopulationsTable extends Migration
 {
@@ -98,7 +99,7 @@ class CreatePopulationsTable extends Migration
         );
         $cities = DB::table('cities')->pluck('id');
         for ($i = 0; $i < count($cities); $i++) {
-            DB::table('populations')->insert([
+            Population::insert([
                 'id_cities' => $cities[$i],
                 'quantity' => $quantity[$i],
             ]);

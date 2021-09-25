@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\Municipality;
 
 class CreateMunicipalitiesTable extends Migration
 {
@@ -89,7 +90,7 @@ class CreateMunicipalitiesTable extends Migration
         );
         $cities = DB::table('cities')->count();
         for ($i = 0; $i < count($salaries); $i++) {
-            DB::table('municipalities')->insert([
+            Municipality::insert([
                 'title' => $municipalities[$i],
                 'salaries' => $salaries[$i],
                 'id_cities' => rand(1, $cities),

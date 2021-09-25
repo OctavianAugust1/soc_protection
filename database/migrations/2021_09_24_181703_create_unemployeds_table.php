@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\Unemployed;
 
 class CreateUnemployedsTable extends Migration
 {
@@ -54,7 +55,7 @@ class CreateUnemployedsTable extends Migration
             200,
         );
         for ($i = 0; $i < count($quantity); $i++) {
-            DB::table('unemployeds')->insert([
+            Unemployed::insert([
                 'id_cities' => $cities[$i],
                 'quantity' => $quantity[$i],
             ]);
