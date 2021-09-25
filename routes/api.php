@@ -18,3 +18,4 @@ use Illuminate\Http\Request;
 //});
 
 Route::get('get_population', 'ApiController@get_population')->name('get_population');
+Route::get('get_invalids_and_population', 'ApiController@get_invalids_and_population')->name('get_invalids_and_population');

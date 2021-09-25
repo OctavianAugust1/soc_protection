@@ -16,4 +16,7 @@ class PageController extends Controller
     public function total_amount_of_poverty() {
         return view('pages.total_amount_of_poverty');
     }
+    public function invalids_and_population() {
+        return view('pages.invalids_and_population');
+    }
 }

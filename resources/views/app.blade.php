@@ -48,10 +48,10 @@
                 <li>
                     <a href="#pageSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><span class="icon-home mr-3"></span>Общее количество бедности</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu1">
-                        <li><a href="{{ route('index') }}"><span class="fa fa-chevron-right mr-2"></span> Количество бедных по региону</a></li>
-                        <li><a href="{{ route('index') }}"><span class="fa fa-chevron-right mr-2"></span> Количество бедных по полу</a></li>
-                        <li><a href="{{ route('index') }}"><span class="fa fa-chevron-right mr-2"></span> Количество бедных по возрасту</a></li>
-                        <li><a href="{{ route('index') }}"><span class="fa fa-chevron-right mr-2"></span> Количество бедных по налию детей</a></li>
+                        <li><a href="{{ route('invalids_and_population') }}"><span class="fa fa-chevron-right mr-2"></span>Количество инвалидов относительно бедных</a></li>
+                        <li><a href="{{ route('total_amount_of_poverty') }}"><span class="fa fa-chevron-right mr-2"></span>Число бедности</a></li>
+                        <li><a href="{{ route('index') }}"><span class="fa fa-chevron-right mr-2"></span>Количество бедных по возрасту</a></li>
+                        <li><a href="{{ route('index') }}"><span class="fa fa-chevron-right mr-2"></span>Количество бедных по налию детей</a></li>
                     </ul>
                 </li>
             <li>
@@ -71,11 +71,12 @@
             <li>
                 <a href="#pageSubmenu4" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><span class="icon-home mr-3"></span>Услуги</a>
                 <ul class="collapse list-unstyled" id="pageSubmenu4">
-                    <li><a href="#"><span class="fa fa-chevron-right mr-2"></span> Социальные выплаты и пособия</a></li>
-                    <li><a href="#"><span class="fa fa-chevron-right mr-2"></span> Социальная защита ветеранов</a></li>
-                    <li><a href="#"><span class="fa fa-chevron-right mr-2"></span> Социальная защита инвалидов</a></li>
-                    <li><a href="#"><span class="fa fa-chevron-right mr-2"></span> Опека и помешательство</a></li>
-                    <li><a href="#"><span class="fa fa-chevron-right mr-2"></span> Трудоустроиство</a></li>
+                    <li><a href="{{ route('service')  }}"><span class="fa fa-chevron-right mr-2"></span>Услуги</a></li>
+                    <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Социальные выплаты и пособия</a></li>
+                    <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Социальная защита ветеранов</a></li>
+                    <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Социальная защита инвалидов</a></li>
+                    <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Опека и помешательство</a></li>
+                    <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Трудоустроиство</a></li>
                 </ul>
               </li>
           </ul>
