@@ -51,7 +51,7 @@ if (document.querySelector('#popChart')) {
             titles.push(population[key]['title'])
         }
         for (let key in population) {
-            count.push(population[key]['quantity'])
+            count.push(Math.round(population[key]['quantity']*0.119))
         }
         var popCanvas = document.getElementById("popChart");
         var barChart = new Chart(popCanvas, {
