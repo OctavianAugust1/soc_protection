@@ -37,19 +37,19 @@
       <div class="side-inner">
 
         <div class="profile">
-          <img src="#" alt="logo" class="img-fluid">
+            <img src="{{ asset('public/images/logo.png') }}" alt="logo" class="img-fluid">
         </div>
 
         <div class="nav-menu">
             <ul class="list-unstyled components mb-5">
-                <li class="active"><a href="#"><span class="icon-home mr-3"></span>Карта</a></li>
+                <li class="active"><a href="{{ route('index') }}"><span class="icon-home mr-3"></span>Карта</a></li>
                 <li>
                     <a href="#pageSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><span class="icon-home mr-3"></span>Общее количество бедности</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu1">
                         <li><a href="{{ route('invalids_and_population') }}"><span class="fa fa-chevron-right mr-2"></span>Количество инвалидов относительно бедных</a></li>
                         <li><a href="{{ route('total_amount_of_poverty') }}"><span class="fa fa-chevron-right mr-2"></span>Число бедности</a></li>
                         <li><a href="{{ route('unemployed_and_population') }}"><span class="fa fa-chevron-right mr-2"></span>Число безработных относительно всего населения</a></li>
-                        <li><a href="{{ route('service')  }}"><span class="fa fa-chevron-right mr-2"></span>Услуги</a></li>
+{{--                        <li><a href="{{ route('service')  }}"><span class="fa fa-chevron-right mr-2"></span>Услуги</a></li>--}}
                     </ul>
                 </li>
             </ul>

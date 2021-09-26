@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Service;
 use Illuminate\Http\Request;
 use App\Models\City;
 
@@ -11,7 +12,8 @@ class PageController extends Controller
         return view('pages.index');
     }
     public function service() {
-        return view('pages.service');
+        $services = Service::pluck('title');
+        return view('pages.service', compact('services'));
     }
     public function total_amount_of_poverty() {
         return view('pages.total_amount_of_poverty');
